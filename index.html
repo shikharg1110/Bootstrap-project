@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DistrictD</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+     
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    * {
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    :root {
+      --bs-primary: #43d9ca;
+      --bs-primary-rgb: #43d9ca;
+    }
+
+    .btn-primary {
+      background-color: var(--bs-primary);
+      border-color: var(--bs-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--bs-primary);
+      border-color: var(--bs-primary);
+    }
+
+    .light-shade-blue {
+      background-color: rgba(67, 217, 202, 0.06);
+    }
+
+    .card-text {
+      font-size: small;
+    }
+
+    .card {
+      border: none;
+      width: 270px;
+    }
+    .card-body {
+      background-color: rgba(67, 217, 202, 0.06);
+    }
+    .owl-dot {
+      display: none !important;
+    }
+    
+    .owl-nav button {
+      font-size: 40px !important;
+      font-weight: 200 !important;
+      color: #888 !important;
+      border: 1px solid #ccc !important; 
+      background-color: #fff !important;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .owl-theme {
+      flex-direction: column;
+    }
+    .card-body {
+      height: 13rem;
+    }
+    @media only screen and (max-width: 1200px) {
+      .card {
+        width: 220px;
+      }
+    }
+    @media only screen and (max-width: 1000px) {
+      .card {
+        width: 270px;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      .card {
+        width: 220px;
+      }
+    }
+    @media only screen and (max-width: 576px) {
+      .card {
+        width: 270px;
+        margin-left: 6rem;
+      }
+    }
+
+    .tabs {
+      background-color: #252e42;
+      color: white;
+    }
+
+    #myTab {
+      background-color: #333d55;
+      max-width: 991px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px;
+      padding: 5px;
+      border: none;
+      margin-bottom: 2rem;
+    }
+    #myTab li {
+      width: 20%;
+    }
+    #myTab li:hover {
+      border: none;
+    }
+    #myTab li .active {
+      background-color: #43d9ca;
+      border-radius: 40px;
+      color: white;
+    }
+    #myTab li a {
+      color: #ccc;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 14px;
+    }
+    .tab-pane h3{
+      font-weight: bold;
+      color: white;
+      font-size: 1.25rem;
+    }
+    .tab-pane p, li {
+      color: gray;
+      font-size: 14px;
+    }
+    .tab-content .active {
+      display: inline-flex;
+    }
+
+
+.f-30{
+  font-size: 30px;
+}
+.btn_primary.lg {
+  font-size: 30px;
+  padding: 0.5rem 6rem !important;
+}
+.form-control {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.row1-form{
+  display: flex;
+}
+.row3-form{
+  display: flex;
+}
+.btn:hover{
+  background-color: #43D9CA;
+  color:white
+}
+.roww{
+  padding: 0px 15px;
+}
+.row-text-area{
+  padding: 6px 12px;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.row2-form, .captcha{
+  padding: 0px 16px;
+}
+.bg-input{
+  background-color: #E9ECEF;
+}
+.refresh{
+  margin-left: 86.4px;
+  display: flex;
+}
+.refresh img{
+  width: 30px;
+  height: 30px;
+}
+.submit-form{
+  position: absolute;
+  right: 8%;
+}
+footer{
+  font-size: 16px;
+  color: #8c929d;
+  /* width: 80%;
+  justify-content: center;
+  align-items: center; */
+}
+.c6{
+  width: 80%;
+}
+footer a{
+  text-decoration: none;
+  color: #8c929d;
+}
+footer a:hover{
+  color: white;
+}
+
+footer img{
+  height: 24px;
+}
+footer ul{
+  list-style-type: none;
+}
+.blueish{
+  color: #43d9ca;
+}
+.footer-foot{
+  display: flex;
+  justify-content: space-between;
+}
+.footer-list-1{
+  display: flex;
+}
+.contact-us{
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  width: 90%;
+}
+.footer-ul{
+  padding: 0;
+}
+.call-icon{
+  width: 8%;
+  height: 4%;
+}
+.gray {
+  color: gray;
+}
+.white {
+  color: white;
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <div class="container">
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./img/DistrictD-logo.png" alt="DistrictD Logo" height="24">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse fw-medium" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Corportate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Plans</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Log In</a>
+            </li>
+          </ul>
+          <button type="button" class="btn btn-primary fw-bold">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Body -->
+  <div class="container d-flex flex-column flex-md-row p-4">
+    <div class="col-md-5">
+      <img src="./img/team-meeting.svg" alt="" class="img-fluid w-sm-25">
+    </div>
+    <div class="col-md-6 col-lg-8 d-flex flex-column justify-content-center align-lg-items-end ms-5"
+      style="max-width: 550px;">
+      <h2 class="fw-bold fs-1 lh-1">Stock Research Made Easy</h2>
+      <p class="text-muted">DistrictD provides first of a kind access to institutional investing resources and tools to
+        everyone</p>
+      <div class="text-end">
+        <button class="btn btn-primary" style="--bs-btn-padding-x: 2rem">Try for free</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="light-shade-blue">
+    <div class="container">
+      <div class="text-center mt-3">
+        <h2 class="mt-3">Our Philosophy</h2>
+        <p>We aim to revolutionize the way you anayse your investments</p>
+      </div>
+
+      <div class="cards-item">
+
+        <div class="owl-carousel owl-theme d-flex">
+
+          <div class="item">
+
+            <div class="card col-sm-2">
+              <div class="position-relative">
+                <img src="./img/Democratization.png" class="card-img-top" alt="Democratization">
+                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                  <p class="text-white text-center fw-bold" style="font-size: small;">Democratization of Investment
+                    Analysis tools</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text">Curated research data, financial models and analysis tools are available majorly to
+                  large financial institutions till date.</p>
+                <p class="card-text">We believe that opening up these data sets and analytical tools will help everyone
+                  invest smartly.</p>
+                </div>
+              </div>
+          </div>
+
+          <div class="item">
+
+            <div class="card col-sm-2">
+              <div class="position-relative">
+                <img src="./img/Leverage-technology.png" class="card-img-top" alt="Leverage technology">
+                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                  <p class="text-white text-center fw-bold" style="font-size: small;">Leverage Technology</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text">Technology is at the core of everything we do at DistrictD!!</p>
+                <p class="card-text">Our platform allows you to perform analysis on large data sets and generate
+                  easy-to-understand insights.</p>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="item">
+
+            <div class="card col-sm-2">
+              <div class="position-relative">
+                <img src="./img/Data-privacy.png" class="card-img-top" alt="Data privacy">
+                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                  <p class="text-white text-center fw-bold" style="font-size: small;">Data Privacy and complete User
+                    Control</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text">We do not push ideas or recommendations to you. We allow you to test your ideas and
+                  scenarios directly with full control in your hands.</p>
+                <p class="card-text">Your Data is completely secure as we are not in the business of selling
+                  ideas/recommendations.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+
+            <div class="card col-sm-2">
+              <div class="position-relative">
+                <img src="./img/all-in-one.png" class="card-img-top" alt="All in one">
+                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                  <p class="text-white text-center fw-bold" style="font-size: small;">No need of Excel for Investment
+                    Analysis</p>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="card-text">Our Web Platform allows you to access all relevant data, financial models,
+                  portfolio allocations and analysis tools on the go.</p>
+                <p class="card-text">You don’t have to struggle through static data in Excel anymore.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tabs pb-5">
+    <div class="container tabs">
+      <div class="text-center">
+        <h2 class="pt-4">Built for intelligent investors by former Research Analysts</h2>
+        <p class="p-3" style="color: gray;">Full suite of Financial & Operational Data, Models and Analytical tools</p>
+      </div>
+      <div class="slider">
+        <ul class="nav nav-tabs fw-bold fs-6 m-auto mb-5" id="myTab">
+          <li class="nav-item">
+            <a class="nav-link active" href="#firstTab" data-toggle="tab">Interactive Financial Models</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#secondTab" data-toggle="tab">Portfolio Analyzer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#thirdTab" data-toggle="tab">Stock Screeners</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#fourthTab" data-toggle="tab">Industry Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#fifthTab" data-toggle="tab">Personalized Environment</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+
+          <div class="tab-pane fade show active" id="firstTab">
+            <div>
+              <h3>Interactive Financial Models</h3>
+              <p>Access web models of top 1000 listed companies in India</p>
+              <p>Build your own estimates in an intuitive way</p>
+              <p>Perform sensitivity analysis and valuations using our in-built tools</p>
+              <p>Save your models / analysis and download in excel format</p>
+              <button class="btn btn-primary" style="--bs-btn-padding-x: 2rem">Try for free</button>
+            </div>
+            <div>
+              <img class="img-fluid" src="img/Interactive financial model.svg" alt="">
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="secondTab">
+            <div>
+              <img src="./img/Interactive financial model.svg" alt="" class="img-fluid">
+            </div>
+            <div>
+              <h3>Portfolio Analyzer</h3>
+              <p>Upload your Stock portfolio and generate meaningful insights</p>
+              <ul>
+                <li>Portfolio Concentration</li>
+                <li>Attribution Analysis</li>
+                <li>Risk evaluation</li>
+                <li>Return expectations</li>
+                <li>And much more!!</li>
+              </ul>
+              <p>Download Portfolio Analysis reports in PDF format</p>
+              <button class="btn btn-primary" style="--bs-btn-padding-x: 2rem">Try for free</button>
+            </div>
+          </div>
+          
+          <div class="tab-pane fade" id="thirdTab">
+            <div>
+              <h3>Stock Screeners</h3>
+              <p>Create your own screeners with multiple levels of filters on Financials, Valuations, Stock Price Returns and other criteria</p>
+              <p>Predefined Stock screeners for direct use</p>
+              <p>Save filtering criteria for easy future use</p>
+              <button class="btn btn-primary" style="--bs-btn-padding-x: 2rem">Try for free</button>
+            </div>
+            <div>
+              <img src="./img/Interactive financial model.svg" alt="" class="img-fluid">
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="fourthTab">
+            <div>
+              <img src="./img/Interactive financial model.svg" alt="" class="img-fluid">
+            </div>
+            <div>
+              <h3>Industry Data</h3>
+              <p>Curated Industry Data with unique insights regarding competitive landscape and relative strengths of the companies within each Industry</p>
+              <p>Compare companies within the industry on multiple financial metrics</p>
+              <button class="btn btn-primary" style="--bs-btn-padding-x: 2rem">Try for free</button>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="fifthTab">
+            <div>
+              <h3>Personalized Environment</h3>
+              <p>Calendar - Keep track of financial results, dividend announcements etc. for your followed companies</p>
+              <p>Personalization – Choose and set your own dashboard widgets, email updates, watchlists, NSE updates</p>
+              <button class="btn btn-primary" style="--bs-btn-padding-x: 2rem">Try for free</button>
+            </div>
+            <div>
+              <img src="./img/Interactive financial model.svg" alt="" class="img-fluid">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center pt-4">
+        <h2>Chatterbox</h2>
+        <p>You can now read what we are saying</p>
+      </div>
+      <div class="cards">
+        <div class="owl-carousel owl-theme chatterbox">
+
+          <div class="item">
+            <div class="card" style="width: 18rem; background-color: #252e42; color: white; height: 25rem;">
+              <img src="./img/thumbnail1.jpg" class="card-img-top img-fluid" alt="Thumbnail 1" style="height: 12rem;">
+              <div class="card-body">
+                <h5 class="card-title">Q1 FY25 update - Nifty50 perfo...</h5>
+                <p class="card-text" style="color: grey;">This quarter Q1 FY25, we have updated ...</p>
+                <a href="#" style="color: white; text-decoration: none;">Read More</a>
+                <p class="card-text" style="color: grey;">August 9th, 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="card" style="width: 18rem; background-color: #252e42; color: white; height: 25rem;">
+              <img src="./img/thumbnail2.jpg" class="card-img-top img-fluid" alt="thumbnail2">
+              <div class="card-body">
+                <h5 class="card-title">Quality of Financial Models &#40;Fy2...</h5>
+                <p class="card-text" style="color: grey;">Just like every year, we did analysis on o...</p>
+                <a href="#" style="color: white; text-decoration: none;">Read More</a>
+                <p class="card-text" style="color: grey;">June 21st, 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="card" style="width: 18rem; background-color: #252e42; color: white; height: 25rem;">
+              <img src="./img/thumbnail3.jpg" class="card-img-top img-fluid" alt="thumbnail3">
+              <div class="card-body">
+                <h5 class="card-title">Raw concall transcripts on same...</h5>
+                <p class="card-text" style="color: grey;">As Q3 FY24 begins, DistrictD launches ...</p>
+                <a href="#" style="color: white; text-decoration: none;">Read More</a>
+                <p class="card-text" style="color: grey;">January 16th, 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="card" style="width: 18rem; background-color: #252e42; color: white; height: 25rem;">
+              <img src="./img/thumbnail2.jpg" class="card-img-top img-fluid" alt="thumbnail2">
+              <div class="card-body">
+                <h5 class="card-title">DistrictD Platform updates & qu...</h5>
+                <p class="card-text" style="color: grey;">In the last two months, we were focusin...</p>
+                <a href="#" style="color: white; text-decoration: none;">Read More</a>
+                <p class="card-text" style="color: grey;">August 22nd, 2023</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="text-center">
+      <h4 style="margin-top: 5rem; font-size: 2rem;">DistrictD is the future-ready platform for investment research and financial analysis. Are You?</h4>
+      <button type="button" class="btn btn-primary fw-bold p-3 px-5 mt-3">Start Now</button>
+    </div>
+  </div>
+
+  <section class="section5 py-md-5 mb-4 mt-4">
+    <div class="container">
+      <h3 class="text-center">Contact Us</h3>
+      <form action="">
+        <div class="row1-form">
+          <div class="col-md-6 ">
+            <div class="row11-form roww text-center">
+              <input class=" form-control" type="text" placeholder="Name">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row11-form roww text-center">
+              <input class=" form-control" type="text" placeholder="E-mail">
+            </div>
+          </div>
+        </div>  
+        <div class="row2-form pt-3 ">
+          <div class="row21 col-md-12">
+            <textarea name="" id="" class="form-control row-text-area text-area" rows="3" placeholder="Message"></textarea>
+          </div>
+        </div>
+        <div class="captcha">
+          <P class="pt-4">Enter Captcha:</P>
+        </div>
+        <div class="row3-form ">
+          <div class="col-md-4 roww">
+            <input class="form-control bg-input" type="text" placeholder="l4qtzl">
+          </div>
+          <div class="col-md-4">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="refresh roww mt-3">
+          <p>Refresh Captcha</p>
+          <img src="./img/refresh.jpg" alt="">
+        </div>
+        <button type="button" class="btn btn-primary submit-form">
+          Submit
+        </button>
+      </form>
+    </div>  
+  </section>
+  <section class="section6" style="background-color: #333d55;">
+    <div class="container c6">
+      <!-- Footer -->
+      <footer class="text-center text-lg-start white  text-muted pt-3">
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3 border-bottom">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="fw-bold">
+                  <i class="fas fa-gem"></i> <img src="./img/DistrictDlogo-w-white.png" alt="">
+                </h6>
+                <p class="blueish">Stock Research Made Easy</p>
+                <p class="gray">
+                  DistrictD provides first of a kind access to institutional investing resources and tools to everyone
+                </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="  mb-2 white pb-3 border-bottom ">
+                  Company
+                </h6>
+                <p class="mt-3">
+                  <a href="#!" class="">About Us</a>
+                </p>
+                <p>
+                  <a href="#!" class="">Our Philosophy</a>
+                </p>
+                <p>
+                  <a href="#!" class="">Blogs</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="mb-2 white pb-3 border-bottom">
+                  Products & Pricing
+                </h6>
+                <p class="mt-3">
+                  <a href="#!" class="">Features</a>
+                </p>
+                <p>
+                  <a href="#!" class="">Plans</a>
+                </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto contact-us ">
+                <!-- Links -->
+                <h6 class="mb-2 white pb-3 border-bottom">Contact Us</h6>
+                <ul class="footer-ul pt-1">
+                  <li><a href=""> <img src="./img/call-icon.png" alt="" class="call-icon"> +91 120 418 9891</a></li>
+                  <li><a href=""><img src="./img/mail-icon.png" alt="" class="call-icon"> support@districtd.co</a></li>
+                  <li class="white">
+                    <img src="./img/location-icon.png" alt="" class="call-icon">
+                    Address </li>
+                  <li class="gray">C-98 First Floor, C Block, <br> Sector 2, Noida, Uttar <br> Pradesh 201301</li>
+                </ul>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+          </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center footer-foot pt-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          <p style="color: grey;">Copyright © DistrictD. All rights reserved.</p>
+          <div class="footer-list">
+            <ul class="footer-list-1">  
+              <a href="" class="me-3"><li >Terms of Use</li></a>
+              <a href="" class="me-3"><li >Privacy Policy</li></a>
+              <a href="" class="me-3"><li >Refund Policy</li></a>
+              <a href="" class="me-3"><li >Cancellation Policy</li></a>
+            </ul>
+          </div>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    
+
+  <!-- jQuery File access cdn link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- JAVASCRIPT FOR OWL CARAOUSEL -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+
+$(document).ready(function(){
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        576: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    });
+    $('.owl-carousel .chatterbox').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        576: {
+          items: 2
+        },
+        1000: {
+          items: 2
+        },
+        1200: {
+          items: 2
+        }
+      }
+    });
+  });
+  </script>
+</body>
+
+</html>
